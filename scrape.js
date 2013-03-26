@@ -1,5 +1,5 @@
-function put(data) {
-    $.ajax('http://127.0.0.1:8181/pandora/', {
+function send(data) {
+    $.ajax('http://localhost/phpjson/pandora.php', {
         type: 'POST',
         data: data,
         contentType: 'text/json',
@@ -31,7 +31,7 @@ setInterval(function() {
 		};
 
 		var songString = JSON.stringify(song);
-		put(songString);
+		send(songString);
 
 		console.log(songString);
 		console.log("A new song started: " + title);

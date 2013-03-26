@@ -1,11 +1,11 @@
 {
   "manifest_version": 2,
 
-  "name": "One-click Kittens",
-  "description": "This extension demonstrates a browser action with kittens.",
+  "name": "Pandora to Turntable",
+  "description": "Takes song's that you like and adds them to your turntable playlist",
   "version": "1.0",
 
-  "permissions": ["tabs", "http://*/*"],
+  "permissions": ["tabs", "<all_urls>"],
 
   "browser_action": {
     "default_icon": "icon.png",
@@ -19,3 +19,4 @@
 
     "web_accessible_resources": ["scrape.js"]
 }
+
