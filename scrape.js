@@ -1,9 +1,13 @@
-function send(data) {
-    $.ajax('http://localhost/phpjson/pandora.php', {
-        type: 'POST',
-        data: data,
-        contentType: 'text/json',
-    });
+function send(title, artistname) {
+	console.log("in here");
+	$.ajax({
+		type: "GET",
+		url: 'http://0.0.0.0:5555/' + title + '?artist=' + artistname,
+		success: function(data) {
+			console.log(data);
+		}
+	});	
+
 }
 
 $(".thumbUpButton").click(function(){
@@ -25,16 +29,8 @@ setInterval(function() {
 	if (title != checkTitle) {
 		title = checkTitle;
 		artistSummary = $('.artistSummary').text();
-		var song = {
-			song: title,
-			artist: artistSummary,
-		};
-
-		var songString = JSON.stringify(song);
-		send(songString);
-
-		console.log(songString);
-		console.log("A new song started: " + title);
+		send(title, artistSummary);
+		console.log(title + " " + artistSummary);
 	} else {
 		console.log("Still playing the same song!");
 	}
