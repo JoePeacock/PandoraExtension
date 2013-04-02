@@ -1,5 +1,6 @@
 import json
 import os
+import sqlalchemy
 from flask import Flask, g, request
 
 app = Flask(__name__)
@@ -8,10 +9,9 @@ app.config['TRAP_BAD_REQUEST_ERRORS'] = True
 
 @app.route('/<title>', methods=['GET'])
 def hello(title):
-	a = open('songs.txt', 'w')
-	a.write(title + " - " + request.args['artist'])
-	a.close()
-	return "wassap"
+	station = request.args['station']
+	print station
+	return "schweet"
 
 if __name__ == '__main__':
 	port = int(os.environ.get('PORT', 5555))

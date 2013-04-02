@@ -1,8 +1,7 @@
-function send(title, artistname) {
-	console.log("in here");
+function send(title, artistname, station) {
 	$.ajax({
 		type: "GET",
-		url: 'http://0.0.0.0:5555/' + title + '?artist=' + artistname,
+		url: 'http://0.0.0.0:5555/' + title + '?artist=' + artistname + '&station=' + station,
 		success: function(data) {
 			console.log(data);
 		}
@@ -26,16 +25,17 @@ console.log(title + " " + artist);
 
 setInterval(function() {
 	checkTitle = $('.songTitle').text();
+	station = $('.stationChangeSelector .textWithArrow div').text();
 	if (title != checkTitle) {
 		title = checkTitle;
 		artistSummary = $('.artistSummary').text();
-		send(title, artistSummary);
-		console.log(title + " " + artistSummary);
+		send(title, artistSummary, station);
+		console.log(title + " " + artistSummary + ' ' + station);
 	} else {
 		console.log("Still playing the same song!");
 	}
 
-}, 30 * 1000);
+}, 2 * 1000);
 
 
 
