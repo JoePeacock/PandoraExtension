@@ -1,12 +1,13 @@
 function send(title, artistname, station) {
+	console.log('http://0.0.0.0:5555/?title=' + title + '&artist=' + artistname + '&station=' + station);
 	$.ajax({
 		type: "GET",
-		url: 'http://0.0.0.0:5555/' + title + '?artist=' + artistname + '&station=' + station,
+		dataType: 'jsonp',
+		url: 'http://0.0.0.0:5555/?title=' + title + '&artist=' + artistname + '&station=' + station,
 		success: function(data) {
 			console.log(data);
 		}
 	});	
-
 }
 
 $(".thumbUpButton").click(function(){
