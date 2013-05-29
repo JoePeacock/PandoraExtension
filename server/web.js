@@ -22,9 +22,9 @@ var server = http.createServer(function (req, res) {
   res.end('<p>' + title + '</p><p>' + artist + '</p><p>' + station + '</p>');
 
 
-}).listen(5555, '0.0.0.0');
+}).listen(80, '208.68.37.33');
 
-console.log('Server running at http://0.0.0.0:5555/');
+console.log('Server running at http://208.68.37.33/');
 
 bot.on('roomChanged', function (data) {
   // Reset the users list
@@ -40,7 +40,6 @@ bot.on('roomChanged', function (data) {
 
 bot.on('registered', function (data) {
   console.log("Started TTAPI");
-  bot.addDj();
   var user = data.user[0];
   theUsersList[user.userid] = user;
 });
