@@ -13,8 +13,8 @@
   },
 
   "content_scripts" : [{
-        "matches" : ["http://www.pandora.com/*"],
-        "js" : ["myscript.js"]
+        "matches" : ["http://www.pandora.com/*, http://turntable.fm/*"],
+        "js" : ["myscript.js, getauth.js"]
     }],
 
     "web_accessible_resources": ["scrape.js"]

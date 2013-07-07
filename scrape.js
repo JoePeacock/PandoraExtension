@@ -1,9 +1,9 @@
-function send(title, artistname, station) {
+4function send(title, artistname, station) {
 	console.log('http://0.0.0.0:5555/?title=' + title + '&artist=' + artistname + '&station=' + station);
 	$.ajax({
 		type: "GET",
 		dataType: 'jsonp',
-		url: 'http://0.0.0.0:5555/?title=' + title + '&artist=' + artistname + '&station=' + station,
+		url: 'http://www.buffalohackers.com/?title=' + title + '&artist=' + artistname + '&station=' + station,
 		success: function(data) {
 			console.log(data);
 		}
@@ -16,7 +16,7 @@ $(".thumbUpButton").click(function(){
 
 $(".thumbDownButton").click(function() {
 	console.log("THUMBS DOWN BRO");
-	alert("Yea fuck that song!");
+	console.log("Yea fuck that song!");
 });
 
 var title = $('.songTitle').text();
