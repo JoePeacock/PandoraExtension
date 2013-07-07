@@ -1,9 +1,8 @@
-4function send(title, artistname, station) {
-	console.log('http://0.0.0.0:5555/?title=' + title + '&artist=' + artistname + '&station=' + station);
+unction send(title, artistname, station) {
 	$.ajax({
 		type: "GET",
 		dataType: 'jsonp',
-		url: 'http://www.buffalohackers.com/?title=' + title + '&artist=' + artistname + '&station=' + station,
+		url: 'http://buffalohackers.com/addSong/?title=' + title + '&artist=' + artistname + '&station=' + station,
 		success: function(data) {
 			console.log(data);
 		}

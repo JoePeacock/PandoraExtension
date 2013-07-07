@@ -9,12 +9,12 @@
 
   "browser_action": {
     "default_icon": "icon.png",
-    "default_popup": "popup.html"
+    "default_popup": "index.html"
   },
 
   "content_scripts" : [{
-        "matches" : ["http://www.pandora.com/*, http://turntable.fm/*"],
-        "js" : ["myscript.js, getauth.js"]
+       "matches" : ["http://www.pandora.com/*"],
+        "js" : ["myscript.js", "usersettings.js", "jquery.js"]
     }],
 
     "web_accessible_resources": ["scrape.js"]

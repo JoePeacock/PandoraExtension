@@ -1,0 +1,10 @@
+body{
+	width: 350px;
+	color:#333;
+	max-height: 250px;
+}
+
+.ttuser {
+	padding: 5px;
+	border-radius: 3px;
+}
